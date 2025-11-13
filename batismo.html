@@ -25,14 +25,28 @@
         }
         
         .header {
+            position: relative;
             margin-bottom: 40px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1516450137517-162bfbeb8dba?q=80&w=2000') center/cover;
+            padding: 80px 40px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 30px;
+            filter: brightness(0) invert(1);
         }
         
         h1 {
             font-size: 40px;
             font-weight: 700;
             margin-bottom: 20px;
-            color: #37352f;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         
         .emoji {
@@ -162,13 +176,14 @@
 <body>
     <div class="container">
         <div class="header">
-            <span class="emoji">💧</span>
+            <!-- Substitua o src abaixo pela URL da logo da Lagoinha Dublin -->
+            <img src="https://via.placeholder.com/200x80/667eea/ffffff?text=LAGOINHA+DUBLIN" alt="Lagoinha Dublin" class="logo">
             <h1>O Batismo nas Águas</h1>
         </div>
 
         <div class="video-container">
             <iframe 
-                src="https://www.youtube.com/embed/eFgnJbD4RjI" 
+                src="https://www.youtube.com/embed/YbtF8wZ91WI" 
                 title="O que é o Batismo?" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
