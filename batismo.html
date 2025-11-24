@@ -24,7 +24,7 @@
         .hero {
             position: relative;
             height: 100vh;
-            background: linear-gradient(rgba(0, 180, 216, 0.3), rgba(72, 202, 228, 0.4)), 
+            background: linear-gradient(rgba(0, 180, 216, 0.25), rgba(72, 202, 228, 0.35)), 
                         url('https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=2000') center/cover;
             display: flex;
             flex-direction: column;
@@ -36,27 +36,28 @@
         }
         
         .hero-logo {
-            max-width: 250px;
-            margin-bottom: 30px;
-            filter: brightness(0) invert(1);
+            max-width: 220px;
+            height: auto;
+            margin-bottom: 40px;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
         }
         
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            line-height: 1.2;
+            line-height: 1.3;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
             color: white;
         }
         
         .hero h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 400;
-            margin-bottom: 40px;
-            max-width: 800px;
+            margin-bottom: 45px;
+            max-width: 700px;
             text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
             color: white;
         }
@@ -79,6 +80,23 @@
         .hero-button:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(0, 180, 216, 0.6);
+        }
+        
+        .hero-date {
+            margin-top: 35px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.95);
+            color: #0096c7;
+            padding: 12px 35px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .hero-date span {
+            font-weight: 800;
+            font-size: 1.3rem;
         }
         
         /* Container */
@@ -270,22 +288,22 @@
 <body>
     <!-- Hero Section -->
     <section class="hero">
-        <!-- Substitua pela logo da Lagoinha Dublin -->
-        <img src="https://via.placeholder.com/250x100/ffffff/667eea?text=LAGOINHA+DUBLIN" alt="Lagoinha Dublin" class="hero-logo">
+        <img src="images/ldub.png" alt="Lagoinha Dublin" class="hero-logo">
         <h1>O Batismo É o Passo de Fé<br>Mais Importante da Sua Vida</h1>
-        <h2>Uma decisão pública de seguir a Jesus Cristo</h2>
-        <a href="#inscricao" class="hero-button">Quero Me Inscrever</a>
+        <a href="#inscricao" class="hero-button">Quero Me Batizar</a>
+        <div class="hero-date">
+            Próximo Batismo: <span>06 de Dezembro de 2025</span>
+        </div>
     </section>
 
     <!-- Video Section -->
     <section class="video-section">
         <div class="container">
-            <h2>Mensagem do Pastor Fabio</h2>
+            <h2>Mensagem do Pastor Fábio</h2>
             <p>Assista ao convite especial do nosso pastor sobre a importância do batismo na sua jornada com Cristo</p>
             <div class="video-container">
-                <!-- Substitua pelo link do vídeo do YouTube do pastor -->
                 <iframe 
-                    src="https://www.youtube.com/embed/YbtF8wZ91WI" 
+                    src="https://www.youtube.com/embed/eFgnJbD4RjI" 
                     title="Convite do Pastor para o Batismo" 
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -307,7 +325,7 @@
                 </div>
                 <div class="requirement-card">
                     <div class="icon">2️⃣</div>
-                    <h3>Participe das Aulas do curso Start</h3>
+                    <h3>Participe da Aula</h3>
                     <p>Compareça à aula preparatória sobre o batismo</p>
                 </div>
                 <div class="requirement-card">
@@ -321,7 +339,7 @@
 
     <!-- CTA Section -->
     <section class="cta-section" id="inscricao">
-        <h2>Pronto Para Se<br>Batizar?</h2>
+        <h2>Pronto Para Dar<br>Este Passo?</h2>
         <p>Se você já aceitou Jesus como seu Salvador e deseja ser batizado, junte-se a nós neste momento especial!</p>
         <!-- Substitua o # pelo link do grupo de WhatsApp -->
         <a href="#" class="cta-button">Inscreva-se Agora</a>
@@ -333,13 +351,16 @@
             <h3>Tem Dúvidas?</h3>
             <p>📧 Email: contato@lagoinhadublin.com</p>
             <p>📱 WhatsApp: +353 XX XXX XXXX</p>
-            <p>📍 Dublin, Ireland</p>
+            <p style="margin-top: 30px;"><strong>📍 Local do Batismo:</strong><br>
+            Belvedere College<br>
+            6 Great Denmark Street, D01 TK25<br>
+            Dublin, Ireland</p>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Lagoinha Dublin. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Lagoinha Dublin. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
