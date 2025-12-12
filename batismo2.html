@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batismo - Lagoinha Dublin</title>
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Animated Banner */
+        .animated-banner {
+            background: linear-gradient(135deg, #00b4d8 0%, #0096c7 100%);
+            color: white;
+            padding: 15px 0;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .banner-content {
+            display: flex;
+            animation: scroll 20s linear infinite;
+            white-space: nowrap;
+        }
+        
+        .banner-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding: 0 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        /* Hero + Video Section Unified */
+        .hero-video-section {
+            position: relative;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #48cae4 0%, #00b4d8 50%, #0096c7 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 60px 20px;
+        }
+        
+        .hero-logo {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .hero-video-section h1 {
+            font-size: 6rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            color: white;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 50px;
+            max-width: 800px;
+            line-height: 1.8;
+        }
+        
+        .video-intro {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding-bottom: 28.125%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            margin-bottom: 40px;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .video-cta-button {
+            display: inline-block;
+            background: white;
+            color: #0096c7;
+            padding: 25px 60px;
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .video-cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Steps Section */
+        .steps-section {
+            background: white;
+            padding: 60px 20px;
+        }
+        
+        .steps-title {
+            font-size: 2rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .steps-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .step {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+            align-items: start;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #48cae4 0%, #00b4d8 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 900;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 180, 216, 0.3);
+        }
+        
+        .step-content h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #00b4d8;
+            text-transform: uppercase;
+        }
+        
+        .step-content p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .step-action {
+            margin-top: 20px;
+        }
+        
+        .step-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #00b4d8 0%, #0096c7 100%);
+            color: white;
+            padding: 15px 40px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .step-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 180, 216, 0.4);
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, #0096c7 0%, #023e8a 100%);
+            padding: 120px 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        .final-cta h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .final-cta p {
+            font-size: 1.4rem;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+        
+        .final-cta-button {
+            display: inline-block;
+            background: white;
+            color: #0096c7;
+            padding: 25px 70px;
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .final-cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+        
+        .event-info {
+            margin-top: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            backdrop-filter: blur(10px);
+        }
+        
+        .event-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .event-info p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-logo {
+                max-width: 280px;
+            }
+            
+            .hero-video-section h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .video-intro {
+                font-size: 1rem;
+            }
+            
+            .video-container {
+                max-width: 100%;
+                padding-bottom: 56.25%;
+            }
+            
+            .video-cta-button {
+                padding: 20px 40px;
+                font-size: 1.2rem;
+            }
+            
+            .step {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .step-number {
+                margin: 0 auto;
+            }
+            
+            .final-cta h2 {
+                font-size: 2.2rem;
+            }
+            
+            .banner-text {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-logo {
+                max-width: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Banner -->
+    <div class="animated-banner">
+        <div class="banner-content">
+            <span class="banner-text">PRÓXIMO BATISMO 21 DE FEVEREIRO ÀS 13H</span>
+            <span class="banner-text">PRÓXIMO BATISMO 21 DE FEVEREIRO ÀS 13H</span>
+            <span class="banner-text">PRÓXIMO BATISMO 21 DE FEVEREIRO ÀS 13H</span>
+            <span class="banner-text">PRÓXIMO BATISMO 21 DE FEVEREIRO ÀS 13H</span>
+        </div>
+    </div>
+
+    <!-- Hero + Video Section Unified -->
+    <section class="hero-video-section">
+        <img src="images/LAGOINHADUBLIN_logo.png" alt="Lagoinha Dublin" class="hero-logo">
+        <h1>BATISMO</h1>
+        <p class="hero-subtitle">
+            O Batismo é a nossa confissão pública de fé. É a confirmação daquilo que já é uma verdade dentro de nós, que fomos alcançados pelo amor e perdão de Jesus, e agora a nossa vida pertence à Ele.
+        </p>
+        
+        
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/_Xr4hyrxwTo" 
+                title="Convite do Pastor para o Batismo" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        
+        <a href="#passos" class="video-cta-button">Quero Me Batizar</a>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="steps-section" id="passos">
+        <h2 class="steps-title">O que eu preciso fazer para participar?</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Participe das aulas do curso Start</h3>
+                    <p>Um curso preparado para apresentar a você os fundamentos da fé em Cristo. Participe online ou presencialmente em nossa igreja.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Entre para o Grupo do WhatsApp</h3>
+                    <p>Nesse grupo concentraremos toda a nossa comunicação para ajudar você no seu batismo.</p>
+                    <div class="step-action">
+                        <a href="#" class="step-button">Entrar no Grupo</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Receberá Todas as Instruções</h3>
+                    <p>Você receberá todo o direcionamento e será discipulado(a) para viver o melhor dia da sua vida.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Esteja Presente e Viva um Novo Começo!</h3>
+                    <p>Você terá um momento único na igreja em comunhão e cheio da presença de Deus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <h2>Viva o Melhor<br>Dia da Sua Vida!</h2>
+        <p>Dê esse passo de fé e celebre sua nova vida em Cristo junto com nossa família Lagoinha Dublin</p>
+        <a href="#passos" class="final-cta-button">Quero Me Batizar</a>
+        
+        <div class="event-info">
+            <h3>📅 Informações do Batismo</h3>
+            <p><strong>Data:</strong> 21 de Fevereiro</p>
+            <p><strong>Horário:</strong> 13h</p>
+            <p><strong>Local:</strong> Belvedere College<br>6 Great Denmark Street, D01 TK25<br>Dublin, Ireland</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>📧 contato@lagoinhadublin.com</p>
+        <p>📱 WhatsApp: +353 XX XXX XXXX</p>
+        <p style="margin-top: 20px;">&copy; 2025 Lagoinha Dublin. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
