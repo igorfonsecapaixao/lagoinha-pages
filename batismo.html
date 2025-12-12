@@ -153,6 +153,27 @@
             height: 100%;
         }
         
+        .video-cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #00b4d8 0%, #0096c7 100%);
+            color: white;
+            padding: 25px 60px;
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0, 180, 216, 0.3);
+        }
+        
+        .video-cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 180, 216, 0.5);
+        }
+        
         /* Steps Section */
         .steps-section {
             background: white;
@@ -379,8 +400,8 @@
 
     <!-- Video Section -->
     <section class="video-section">
-    <!--    <h2>Assista ao vídeo para entender a importância do batismo para a sua vida!</h2>  -->
-   <h2>Chegou a hora do seu Batismo!</h2>  
+        <h2>Assista ao vídeo para entender a importância do batismo para a sua vida!</h2>
+    
         <div class="video-container">
             <iframe 
                 src="https://www.youtube.com/embed/_Xr4hyrxwTo" 
@@ -390,6 +411,8 @@
                 allowfullscreen>
             </iframe>
         </div>
+        
+        <a href="#passos" class="video-cta-button">Quero Me Batizar</a>
     </section>
 
     <!-- Steps Section -->
@@ -410,7 +433,7 @@
                     <h3>Entre para o Grupo do WhatsApp</h3>
                     <p>Nesse grupo concentraremos toda a nossa comunicação para ajudar você no seu batismo.</p>
                     <div class="step-action">
-                        <a href="#" class="step-button">QUERO ENTRAR NO GRUPO</a>
+                        <a href="#" class="step-button">Entrar no Grupo</a>
                     </div>
                 </div>
             </div>
