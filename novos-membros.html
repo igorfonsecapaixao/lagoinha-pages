@@ -23,7 +23,7 @@
         
         /* Animated Banner */
         .animated-banner {
-            background: linear-gradient(135deg, #00b4d8 0%, #0096c7 100%);
+            background: linear-gradient(135deg, #7209b7 0%, #560bad 100%);
             color: white;
             padding: 15px 0;
             overflow: hidden;
@@ -53,7 +53,7 @@
         .hero-section {
             position: relative;
             min-height: 90vh;
-            background: linear-gradient(135deg, #48cae4 0%, #00b4d8 50%, #0096c7 100%);
+            background: linear-gradient(135deg, #9d4edd 0%, #7209b7 50%, #560bad 100%);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -152,7 +152,7 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 40px;
         }
         
@@ -174,12 +174,67 @@
             left: 0;
             right: 0;
             height: 5px;
-            background: linear-gradient(135deg, #48cae4 0%, #00b4d8 100%);
+            background: linear-gradient(135deg, #9d4edd 0%, #7209b7 100%);
         }
         
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0, 180, 216, 0.2);
+            box-shadow: 0 20px 60px rgba(114, 9, 183, 0.2);
+        }
+        
+        /* Featured Card */
+        .card.featured {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #9d4edd 0%, #7209b7 100%);
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(114, 9, 183, 0.3);
+            border: 3px solid white;
+        }
+        
+        .card.featured::before {
+            display: none;
+        }
+        
+        .card.featured:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 80px rgba(114, 9, 183, 0.4);
+        }
+        
+        .card.featured h3 {
+            color: white;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .card.featured p {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .card.featured .card-button {
+            background: white;
+            color: #7209b7;
+            font-size: 1.2rem;
+            padding: 18px 50px;
+        }
+        
+        .card.featured .card-button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .featured-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
         }
         
         .card-icon {
@@ -192,7 +247,7 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 15px;
-            color: #00b4d8;
+            color: #7209b7;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -206,7 +261,7 @@
         
         .card-button {
             display: inline-block;
-            background: linear-gradient(135deg, #00b4d8 0%, #0096c7 100%);
+            background: linear-gradient(135deg, #7209b7 0%, #560bad 100%);
             color: white;
             padding: 15px 35px;
             font-size: 1rem;
@@ -220,7 +275,7 @@
         
         .card-button:hover {
             transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(0, 180, 216, 0.4);
+            box-shadow: 0 10px 25px rgba(114, 9, 183, 0.4);
         }
         
         /* Info Section */
@@ -254,7 +309,7 @@
         .contact-info {
             margin-top: 50px;
             padding: 40px;
-            background: linear-gradient(135deg, #48cae4 0%, #00b4d8 100%);
+            background: linear-gradient(135deg, #9d4edd 0%, #7209b7 100%);
             border-radius: 20px;
             color: white;
         }
@@ -274,7 +329,7 @@
         .contact-button {
             display: inline-block;
             background: white;
-            color: #0096c7;
+            color: #7209b7;
             padding: 15px 40px;
             font-size: 1.1rem;
             font-weight: 700;
@@ -335,6 +390,10 @@
                 grid-template-columns: 1fr;
             }
             
+            .card.featured {
+                grid-column: 1;
+            }
+            
             .banner-text {
                 font-size: 1rem;
             }
@@ -352,18 +411,16 @@
     </style>
 </head>
 <body>
-    <!-- Animated Banner -->
-
     <!-- Hero Section -->
     <section class="hero-section">
         <img src="images/LAGOINHADUBLIN_logo.png" alt="Lagoinha Dublin" class="hero-logo">
-        <h1>WELCOME TO THE NEW</h1>
+        <h1>WELCOME TO THE NEW 🕊️</h1>
         <p class="hero-subtitle">
-            Seja muito bem-vindo(a)! Estamos felizes em ter você conosco. Aqui você encontra todas as formas de se conectar com a nossa igreja e dar os primeiros passos na sua jornada de fé.
+            Bem-vindo(a) a Lagoinha Dublin! Estamos felizes em ter você conosco. Aqui você encontra todas as formas de se conectar com a nossa igreja e dar os primeiros passos na sua jornada de fé.
         </p>
         
         <p class="video-intro">
-            Assista ao vídeo de boas-vindas do nosso pastor:
+            Assista ao vídeo de boas-vindas do nosso pastor Fabio:
         </p>
         
         <div class="video-container">
@@ -385,30 +442,28 @@
         </div>
         
         <div class="cards-container">
-            <!-- Card 1: Tornar-se Membro -->
-            <div class="card">
+            <!-- Featured Card: Tornar-se Membro -->
+            <div class="card featured">
                 <h3>Tornar-se Membro</h3>
-                <p>Para se tornar um membro voce precisa participar do nosso Cafe de Novos Membros. Clique no botao abaixo para participar do proximo:</p>
-                <a href="#contato" class="card-button">Entrar no grupo</a>
+                <p>Para se tornar membro, é necessário cumprir três etapas: ser batizado, participar do nosso Café de Novos Membros e passar por um atendimento pastoral. Ao clicar no botão abaixo, você poderá entrar no grupo de WhatsApp do próximo Café de Novos Membros. Nesse grupo, compartilharemos todas as informações necessárias.</p>
+                <a href="#contato" class="card-button">Entrar no Grupo</a>
             </div>
             
-            <!-- Card 2: Batismo -->
+            <!-- Card 1: Batismo -->
             <div class="card">
                 <h3>Batismo</h3>
                 <p>Declare publicamente sua fé em Jesus Cristo e celebre sua nova vida através do batismo nas águas.</p>
-                <a href="batismo.html" class="card-button">Quero Me Batizar</a>
+                <a href="https://igorfonsecapaixao.github.io/lagoinha-pages/batismo2" target="_blank" class="card-button">Quero Me Batizar</a>
             </div>
             
-           
-            
-            <!-- Card 3: Atendimento Pastoral -->
+            <!-- Card 2: Atendimento Pastoral -->
             <div class="card">
                 <h3>Atendimento Pastoral</h3>
                 <p>Precisa de oração, aconselhamento ou uma conversa? Nossa equipe pastoral está pronta para te atender.</p>
                 <a href="#contato" class="card-button">Solicitar Atendimento</a>
             </div>
 
-             <!-- Card 4: Curso Start -->
+            <!-- Card 3: Curso Start -->
             <div class="card">
                 <h3>Curso Start</h3>
                 <p>Conheça os fundamentos da fé cristã e aprenda mais sobre Jesus e Seu propósito para sua vida.</p>
