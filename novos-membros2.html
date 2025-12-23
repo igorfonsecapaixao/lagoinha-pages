@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect - Lagoinha Dublin</title>
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Animated Banner */
+        .animated-banner {
+            background: linear-gradient(135deg, #00b4d8 0%, #0096c7 100%);
+            color: white;
+            padding: 15px 0;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .banner-content {
+            display: flex;
+            animation: scroll 25s linear infinite;
+            white-space: nowrap;
+        }
+        
+        .banner-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding: 0 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            min-height: 90vh;
+            background: linear-gradient(135deg, #48cae4 0%, #00b4d8 50%, #0096c7 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+        }
+        
+        .hero-logo {
+            width: 100%;
+            max-width: 420px;
+            height: auto;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .hero-section h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            color: white;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 40px;
+            max-width: 900px;
+            line-height: 1.8;
+        }
+        
+        .video-intro {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 720px;
+            margin: 0 auto;
+            padding-bottom: 27%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            margin-bottom: 40px;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            min-width: 100%;
+            min-height: 100%;
+        }
+        
+        /* Cards Section */
+        .cards-section {
+            background: #f8f9fa;
+            padding: 80px 20px;
+        }
+        
+        .section-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+        
+        .section-intro h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .section-intro p {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .cards-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(135deg, #48cae4 0%, #00b4d8 100%);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 180, 216, 0.2);
+        }
+        
+        /* Featured Card */
+        .card.featured {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #48cae4 0%, #00b4d8 100%);
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(0, 180, 216, 0.3);
+            border: 3px solid white;
+        }
+        
+        .card.featured::before {
+            display: none;
+        }
+        
+        .card.featured:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 80px rgba(0, 180, 216, 0.4);
+        }
+        
+        .card.featured h3 {
+            color: white;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .card.featured p {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .card.featured .card-button {
+            background: white;
+            color: #0096c7;
+            font-size: 1.2rem;
+            padding: 18px 50px;
+        }
+        
+        .card.featured .card-button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .featured-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        
+        .card-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #00b4d8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .card p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .card-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #00b4d8 0%, #0096c7 100%);
+            color: white;
+            padding: 15px 35px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .card-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 180, 216, 0.4);
+        }
+        
+        /* Info Section */
+        .info-section {
+            background: white;
+            padding: 80px 20px;
+        }
+        
+        .info-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .info-container h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .info-container p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .contact-info {
+            margin-top: 50px;
+            padding: 40px;
+            background: linear-gradient(135deg, #48cae4 0%, #00b4d8 100%);
+            border-radius: 20px;
+            color: white;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .contact-button {
+            display: inline-block;
+            background: white;
+            color: #0096c7;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .contact-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-logo {
+                max-width: 280px;
+            }
+            
+            .hero-section h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .video-intro {
+                font-size: 1rem;
+            }
+            
+            .video-container {
+                max-width: 100%;
+                padding-bottom: 56.25%;
+            }
+            
+            .section-intro h2,
+            .info-container h2 {
+                font-size: 2rem;
+            }
+            
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .banner-text {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-logo {
+                max-width: 220px;
+            }
+            
+            .hero-section h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+  
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <img src="images/LAGOINHADUBLIN_logo.png" alt="Lagoinha Dublin" class="hero-logo">
+        <h1>WELCOME TO THE NEW 🕊️</h1>
+        <p class="hero-subtitle">
+            Seja muito bem-vindo(a)! Estamos felizes em ter você conosco. Aqui você encontra todas as formas de se conectar com a nossa igreja e dar os primeiros passos na sua jornada de fé.
+        </p>
+        
+        <p class="video-intro">
+            Assista ao vídeo de boas-vindas do nosso pastor:
+        </p>
+        
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/STJuk-yGVqM" 
+                title="Boas-vindas à Lagoinha Dublin" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="cards-section">
+        <div class="section-intro">
+            <h2>Como Posso Me Conectar?</h2>
+            <p>Escolha a opção que melhor se encaixa no seu momento atual e dê o próximo passo!</p>
+        </div>
+        
+        <div class="cards-container">
+            <!-- Featured Card: Tornar-se Membro -->
+            <div class="card featured">
+                <h3>Tornar-se Membro</h3>
+                <p>Para se tornar um membro você precisa participar do nosso Café de Novos Membros. Faça parte oficialmente da nossa família e contribua ativamente na construção do Reino de Deus em Dublin.</p>
+                <a href="#contato" class="card-button">Entrar no Grupo</a>
+            </div>
+            
+            <!-- Card 1: Batismo -->
+            <div class="card">
+                <h3>Batismo</h3>
+                <p>Declare publicamente sua fé em Jesus Cristo e celebre sua nova vida através do batismo nas águas.</p>
+                <a href="batismo.html" class="card-button">Quero Me Batizar</a>
+            </div>
+            
+            <!-- Card 2: Atendimento Pastoral -->
+            <div class="card">
+                <h3>Atendimento Pastoral</h3>
+                <p>Precisa de oração, aconselhamento ou uma conversa? Nossa equipe pastoral está pronta para te atender.</p>
+                <a href="#contato" class="card-button">Solicitar Atendimento</a>
+            </div>
+
+            <!-- Card 3: Curso Start -->
+            <div class="card">
+                <h3>Curso Start</h3>
+                <p>Conheça os fundamentos da fé cristã e aprenda mais sobre Jesus e Seu propósito para sua vida.</p>
+                <a href="#contato" class="card-button">Fazer o Start</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info-section" id="contato">
+        <div class="info-container">
+            <h2>Estamos Aqui Para Você</h2>
+            <p>
+                Nossa missão é cuidar de você e te ajudar a crescer na sua caminhada com Jesus. Não importa onde você está nessa jornada, queremos caminhar ao seu lado.
+            </p>
+            <p>
+                Entre em contato conosco pelo WhatsApp e nossa equipe terá o prazer de te atender e te auxiliar em qualquer uma dessas áreas.
+            </p>
+            
+            <div class="contact-info">
+                <h3>📱 Fale Conosco</h3>
+                <p><strong>WhatsApp:</strong> +353 87 001 6933</p>
+                <p><strong>Local dos Cultos:</strong><br>
+                Griffith College<br>
+                South Circular Road<br>
+                Dublin, Ireland D08 V04N</p>
+                <p><strong>Sunday Services / Cultos aos Domingos:</strong><br>
+                10AM | 11:45AM | 5PM (English) | 6:30PM</p>
+                <a href="https://wa.me/353870016933" class="contact-button" target="_blank">Enviar Mensagem</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>📱 WhatsApp: +353 87 001 6933</p>
+        <p>📧 Email: contato@lagoinhadublin.ie</p>
+        <p style="margin-top: 20px;">&copy; 2026 Lagoinha Dublin. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
