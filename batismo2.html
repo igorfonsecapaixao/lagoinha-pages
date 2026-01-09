@@ -72,11 +72,11 @@
         }
         
         .hero-video-section h1 {
-            font-size: 9rem;
-            font-weight: 500;
+            font-size: 8rem;
+            font-weight: 600;
             margin-bottom: 25px;
             text-transform: uppercase;
-            letter-spacing: -4px;
+            letter-spacing: -2px;
             line-height: 1.2;
             color: white;
         }
@@ -125,14 +125,14 @@
             display: inline-block;
             background: white;
             color: #0096c7;
-            padding: 18px 48px;
-            font-size: 1.4rem;
+            padding: 15px 40px;
+            font-size: 1.1rem;
             font-weight: 800;
             text-decoration: none;
             border-radius: 50px;
             transition: transform 0.3s, box-shadow 0.3s;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
             margin-bottom: 25px;
         }
@@ -149,13 +149,13 @@
         }
         
         .steps-title {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 800;
             text-align: center;
             margin-bottom: 50px;
             color: #1a1a1a;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
         
         .steps-container {
@@ -165,28 +165,28 @@
         
         .step {
             display: grid;
-            grid-template-columns: 80px 1fr;
-            gap: 30px;
-            margin-bottom: 50px;
+            grid-template-columns: 70px 1fr;
+            gap: 25px;
+            margin-bottom: 40px;
             align-items: start;
         }
         
         .step-number {
-            width: 80px;
-            height: 80px;
+            width: 50px;
+            height: 50px;
             background: linear-gradient(135deg, #48cae4 0%, #00b4d8 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 900;
             color: white;
             box-shadow: 0 10px 30px rgba(0, 180, 216, 0.3);
         }
         
         .step-content h3 {
-            font-size: 1.3rem;
+            font-size: 2rem;
             font-weight: 700;
             margin-bottom: 10px;
             color: #00b4d8;
@@ -207,8 +207,8 @@
             display: inline-block;
             background: linear-gradient(135deg, #00b4d8 0%, #0096c7 100%);
             color: white;
-            padding: 15px 40px;
-            font-size: 1rem;
+            padding: 12px 30px;
+            font-size: 0.9rem;
             font-weight: 700;
             text-decoration: none;
             border-radius: 50px;
@@ -231,11 +231,11 @@
         }
         
         .final-cta h2 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 30px;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
         }
         
         .final-cta p {
@@ -251,14 +251,14 @@
             display: inline-block;
             background: white;
             color: #0096c7;
-            padding: 25px 70px;
-            font-size: 1.4rem;
+            padding: 16px 45px;
+            font-size: 1.1rem;
             font-weight: 800;
             text-decoration: none;
             border-radius: 50px;
             transition: transform 0.3s, box-shadow 0.3s;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             box-shadow: 0 15px 40px rgba(0,0,0,0.3);
         }
         
@@ -302,17 +302,33 @@
         }
         
         /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-video-section h1 {
+                font-size: 3.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .final-cta h2 {
+                font-size: 2.2rem;
+            }
+        }
+        
         @media (max-width: 768px) {
             .hero-logo {
                 max-width: 280px;
             }
             
             .hero-video-section h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
+                letter-spacing: -1px;
             }
             
             .hero-subtitle {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+                margin-bottom: 35px;
             }
             
             .video-intro {
@@ -325,32 +341,113 @@
             }
             
             .video-cta-button {
-                padding: 20px 40px;
-                font-size: 1.2rem;
+                padding: 14px 35px;
+                font-size: 1rem;
+            }
+            
+            .steps-title {
+                font-size: 1.5rem;
             }
             
             .step {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 15px;
                 text-align: center;
+                margin-bottom: 35px;
             }
             
             .step-number {
                 margin: 0 auto;
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+            
+            .step-content h3 {
+                font-size: 1rem;
+            }
+            
+            .step-content p {
+                font-size: 0.95rem;
+            }
+            
+            .step-button {
+                padding: 11px 25px;
+                font-size: 0.85rem;
+            }
+            
+            .final-cta {
+                padding: 80px 20px;
             }
             
             .final-cta h2 {
-                font-size: 2.2rem;
+                font-size: 1.9rem;
+            }
+            
+            .final-cta p {
+                font-size: 1.1rem;
+            }
+            
+            .final-cta-button {
+                padding: 14px 35px;
+                font-size: 1rem;
+            }
+            
+            .event-info {
+                padding: 30px 25px;
+            }
+            
+            .event-info h3 {
+                font-size: 1.3rem;
+            }
+            
+            .event-info p {
+                font-size: 1rem;
             }
             
             .banner-text {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
         }
         
         @media (max-width: 480px) {
             .hero-logo {
-                max-width: 220px;
+                max-width: 200px;
+            }
+            
+            .hero-video-section h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .video-cta-button {
+                padding: 12px 28px;
+                font-size: 0.9rem;
+            }
+            
+            .steps-title {
+                font-size: 1.3rem;
+            }
+            
+            .final-cta h2 {
+                font-size: 1.6rem;
+            }
+            
+            .final-cta p {
+                font-size: 1rem;
+            }
+            
+            .final-cta-button {
+                padding: 12px 28px;
+                font-size: 0.9rem;
+            }
+            
+            .banner-text {
+                font-size: 0.85rem;
+                letter-spacing: 1px;
             }
         }
     </style>
@@ -387,7 +484,7 @@
         
         <a href="#passos" class="video-cta-button">Quero Me Batizar</a>
 
-        <div style="margin-top: 1px; font-size: 1.3rem; font-weight: 500;  padding: 25px 45px;">
+        <div style="margin-top: 1px; font-size: 1.3rem; font-weight: 500; padding: 25px 45px;">
             Próximo Batismo: <strong>21 de Fevereiro às 13h</strong>
         </div>
     </section>
@@ -396,8 +493,21 @@
     <section class="steps-section" id="passos">
         <h2 class="steps-title">O que eu preciso fazer para participar?</h2>
         <div class="steps-container">
+          
+            
             <div class="step">
                 <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Entre para o Grupo do WhatsApp</h3>
+                    <p>Nesse grupo concentraremos toda a nossa comunicação para ajudar você no seu batismo.</p>
+                    <div class="step-action">
+                        <a href="https://chat.whatsapp.com/J5H4O8Y4ZTgCMzQsmV3x9o" class="step-button" target="_blank">Entrar no Grupo do próximo Batismo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
                 <div class="step-content">
                     <h3>Participe das aulas do curso Start</h3>
                     <p>Um curso preparado para apresentar a você os fundamentos da fé em Cristo. Participe online ou presencialmente em nossa igreja.</p>
@@ -405,26 +515,7 @@
             </div>
             
             <div class="step">
-                <div class="step-number">2</div>
-                <div class="step-content">
-                    <h3>Entre para o Grupo do WhatsApp</h3>
-                    <p>Nesse grupo concentraremos toda a nossa comunicação para ajudar você no seu batismo.</p>
-                    <div class="step-action">
-                        <a href="#" class="step-button">Entrar no Grupo do próximo Batismo</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="step">
                 <div class="step-number">3</div>
-                <div class="step-content">
-                    <h3>Receberá Todas as Instruções</h3>
-                    <p>Você receberá todo o direcionamento e será discipulado(a) para viver o melhor dia da sua vida.</p>
-                </div>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">4</div>
                 <div class="step-content">
                     <h3>Esteja Presente e Viva um Novo Começo!</h3>
                     <p>Você terá um momento único na igreja em comunhão e cheio da presença de Deus.</p>
