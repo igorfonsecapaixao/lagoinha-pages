@@ -21,38 +21,10 @@
             overflow-x: hidden;
         }
         
-        /* Animated Banner */
-        .animated-banner {
-            background: linear-gradient(135deg, #7209b7 0%, #560bad 100%);
-            color: white;
-            padding: 15px 0;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .banner-content {
-            display: flex;
-            animation: scroll 25s linear infinite;
-            white-space: nowrap;
-        }
-        
-        .banner-text {
-            font-size: 1.2rem;
-            font-weight: 700;
-            padding: 0 50px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        
-        /* Hero Section */
+        /* Hero Section with Video */
         .hero-section {
             position: relative;
-            min-height: 90vh;
+            min-height: 100vh;
             background: linear-gradient(135deg, #9d4edd 0%, #7209b7 50%, #560bad 100%);
             display: flex;
             flex-direction: column;
@@ -60,19 +32,19 @@
             align-items: center;
             text-align: center;
             color: white;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
         
         .hero-logo {
             width: 100%;
             max-width: 420px;
             height: auto;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             display: block;
         }
         
         .hero-section h1 {
-            font-size: 5rem;
+            font-size: 4.5rem;
             font-weight: 900;
             margin-bottom: 25px;
             text-transform: uppercase;
@@ -82,189 +54,186 @@
         }
         
         .hero-subtitle {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 400;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             max-width: 900px;
             line-height: 1.8;
-        }
-        
-        .video-intro {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
         }
         
         .video-container {
             position: relative;
             width: 100%;
-            max-width: 720px;
+            max-width: 900px;
             margin: 0 auto;
-            padding-bottom: 27%;
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-            margin-bottom: 40px;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.5);
+            aspect-ratio: 16 / 9;
         }
         
         .video-container iframe {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            min-width: 100%;
-            min-height: 100%;
         }
         
-        /* Cards Section */
-        .cards-section {
-            background: #f8f9fa;
-            padding: 80px 20px;
+        /* Connection Options Section */
+        .connection-section {
+            background: #ffffff;
+            padding: 100px 20px;
         }
         
-        .section-intro {
+        .section-title {
             text-align: center;
-            max-width: 800px;
-            margin: 0 auto 60px;
-        }
-        
-        .section-intro h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 800;
             margin-bottom: 20px;
             color: #1a1a1a;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
         
-        .section-intro p {
-            font-size: 1.2rem;
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
             color: #666;
-            line-height: 1.8;
+            margin-bottom: 80px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
-        .cards-container {
-            max-width: 1200px;
+        .options-grid {
+            max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
         }
         
-        .card {
+        .option-card {
+            position: relative;
             background: white;
             border-radius: 20px;
-            padding: 40px 30px;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            position: relative;
             overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
         }
         
-        .card::before {
+
+        
+        .option-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .option-content {
+            padding: 35px 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        
+        .option-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .option-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #7209b7;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .option-description {
+            font-size: 1.05rem;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+        
+        .option-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #7209b7 0%, #560bad 100%);
+            color: white;
+            padding: 16px 40px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .option-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(114, 9, 183, 0.4);
+        }
+        
+        /* Gradient overlays for images */
+        .option-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 5px;
+            height: 280px;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.1) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .option-card::before {
+                height: 220px;
+            }
+        }
+        
+        /* Volunteer Section */
+        .volunteer-section {
             background: linear-gradient(135deg, #9d4edd 0%, #7209b7 100%);
-        }
-        
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(114, 9, 183, 0.2);
-        }
-        
-        /* Featured Card */
-        .card.featured {
-            grid-column: 1 / -1;
-            background: linear-gradient(135deg, #9d4edd 0%, #7209b7 100%);
-            padding: 60px 40px;
-            box-shadow: 0 20px 60px rgba(114, 9, 183, 0.3);
-            border: 3px solid white;
-        }
-        
-        .card.featured::before {
-            display: none;
-        }
-        
-        .card.featured:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 30px 80px rgba(114, 9, 183, 0.4);
-        }
-        
-        .card.featured h3 {
+            padding: 80px 20px;
+            text-align: center;
             color: white;
-            font-size: 2.2rem;
-            margin-bottom: 20px;
         }
         
-        .card.featured p {
-            color: white;
-            font-size: 1.2rem;
-            margin-bottom: 30px;
+        .volunteer-section h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
-        .card.featured .card-button {
+        .volunteer-section p {
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .volunteer-button {
+            display: inline-block;
             background: white;
             color: #7209b7;
-            font-size: 1.2rem;
             padding: 18px 50px;
-        }
-        
-        .card.featured .card-button:hover {
-            transform: scale(1.08);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        }
-        
-        .featured-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-        }
-        
-        .card-icon {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            display: block;
-        }
-        
-        .card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #7209b7;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .card p {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-        
-        .card-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #7209b7 0%, #560bad 100%);
-            color: white;
-            padding: 15px 35px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 700;
             text-decoration: none;
             border-radius: 50px;
@@ -273,69 +242,68 @@
             letter-spacing: 1px;
         }
         
-        .card-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(114, 9, 183, 0.4);
+        .volunteer-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
         }
         
-        /* Info Section */
-        .info-section {
-            background: white;
+        /* Contact Section */
+        .contact-section {
+            background: #f8f9fa;
             padding: 80px 20px;
         }
         
-        .info-container {
+        .contact-container {
             max-width: 900px;
             margin: 0 auto;
             text-align: center;
         }
         
-        .info-container h2 {
+        .contact-container h2 {
             font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 30px;
             color: #1a1a1a;
             text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        
-        .info-container p {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.8;
+            letter-spacing: 1px;
         }
         
         .contact-info {
-            margin-top: 50px;
-            padding: 40px;
-            background: linear-gradient(135deg, #9d4edd 0%, #7209b7 100%);
+            background: white;
+            padding: 50px 40px;
             border-radius: 20px;
-            color: white;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
         }
         
         .contact-info h3 {
             font-size: 1.8rem;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             font-weight: 700;
+            color: #7209b7;
         }
         
         .contact-info p {
             font-size: 1.1rem;
-            margin-bottom: 10px;
-            color: white;
+            margin-bottom: 15px;
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .contact-info strong {
+            color: #333;
         }
         
         .contact-button {
             display: inline-block;
-            background: white;
-            color: #7209b7;
-            padding: 15px 40px;
+            background: linear-gradient(135deg, #7209b7 0%, #560bad 100%);
+            color: white;
+            padding: 16px 45px;
             font-size: 1.1rem;
             font-weight: 700;
             text-decoration: none;
             border-radius: 50px;
-            margin-top: 20px;
+            margin-top: 25px;
             transition: transform 0.3s, box-shadow 0.3s;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -343,19 +311,20 @@
         
         .contact-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(114, 9, 183, 0.4);
         }
         
         /* Footer */
         footer {
             background-color: #1a1a1a;
             color: white;
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
         }
         
         footer p {
             margin-bottom: 10px;
+            font-size: 1rem;
         }
         
         /* Responsive */
@@ -365,37 +334,36 @@
             }
             
             .hero-section h1 {
-                font-size: 3rem;
+                font-size: 2.8rem;
             }
             
             .hero-subtitle {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             
-            .video-intro {
-                font-size: 1rem;
+            .section-title {
+                font-size: 2.2rem;
             }
             
-            .video-container {
-                max-width: 100%;
-                padding-bottom: 56.25%;
+            .section-subtitle {
+                font-size: 1.1rem;
             }
             
-            .section-intro h2,
-            .info-container h2 {
+            .options-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .option-image {
+                height: 220px;
+            }
+            
+            .volunteer-section h2 {
                 font-size: 2rem;
             }
             
-            .cards-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .card.featured {
-                grid-column: 1;
-            }
-            
-            .banner-text {
-                font-size: 1rem;
+            .volunteer-section p {
+                font-size: 1.1rem;
             }
         }
         
@@ -407,18 +375,21 @@
             .hero-section h1 {
                 font-size: 2.2rem;
             }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
+    <!-- Hero Section with Video -->
     <section class="hero-section">
         <img src="images/LAGOINHADUBLIN_logo.png" alt="Lagoinha Dublin" class="hero-logo">
         <h1>WELCOME TO THE NEW 🕊️</h1>
         <p class="hero-subtitle">
-            Bem-vindo(a) à Lagoinha Dublin! Estamos felizes em ter você conosco. Aqui você encontra todas as formas de se conectar com a nossa igreja e dar os primeiros passos na sua jornada de fé.
+            Bem-vindo(a) à Lagoinha Dublin! Estamos felizes em ter você conosco. Assista à mensagem do nosso pastor e descubra como se conectar com a nossa família.
         </p>
-        
         
         <div class="video-container">
             <iframe 
@@ -431,62 +402,75 @@
         </div>
     </section>
 
-    <!-- Cards Section -->
-    <section class="cards-section">
-        <div class="section-intro">
-            <h2>Como Posso Me Conectar?</h2>
-            <p>Escolha a opção que melhor se encaixa no seu momento atual e dê o próximo passo!</p>
-        </div>
+    <!-- Connection Options Section -->
+    <section class="connection-section">
+        <h2 class="section-title">Como Posso Me Conectar?</h2>
+        <p class="section-subtitle">Escolha a opção que melhor se encaixa no seu momento atual e dê o próximo passo na sua jornada!</p>
         
-        <div class="cards-container">
-            <!-- Featured Card: Tornar-se Membro -->
-            <div class="card featured">
-                <h3>Tornar-se Membro</h3>
-                <p>Para se tornar membro, é necessário cumprir três etapas: ser batizado, participar do nosso Café de Novos Membros e passar por um atendimento pastoral. Ao clicar no botão abaixo, você poderá entrar no grupo de WhatsApp do próximo Café de Novos Membros. Nesse grupo, compartilharemos todas as informações necessárias.</p>
-                <a href="#contato" class="card-button">Entrar no Grupo</a>
+        <div class="options-grid">
+            
+            <!-- Batismo Card -->
+            <div class="option-card">
+                <img src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=800&h=600&fit=crop" alt="Batismo" class="option-image">
+                <div class="option-content">
+                    <h3 class="option-title">Batismo</h3>
+                    <p class="option-description">Quer se batizar?</p>
+                    <a href="https://lagoinhadublin.com/batismo/" target="_blank" class="option-button">Quero!</a>
+                </div>
             </div>
             
-            <!-- Card 1: Batismo -->
-            <div class="card">
-                <h3>Batismo</h3>
-                <p>Declare publicamente sua fé em Jesus Cristo e celebre sua nova vida através do batismo nas águas.</p>
-                <a href="https://igorfonsecapaixao.github.io/lagoinha-pages/batismo2" target="_blank" class="card-button">Quero Me Batizar</a>
-            </div>
-            
-            <!-- Card 2: Atendimento Pastoral -->
-            <div class="card">
-                <h3>Atendimento Pastoral</h3>
-                <p>Precisa de oração, aconselhamento ou uma conversa? Nossa equipe pastoral está pronta para te atender.</p>
-                <a href="#contato" class="card-button">Solicitar Atendimento</a>
+            <!-- Membro Card -->
+            <div class="option-card">
+                <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=800&h=600&fit=crop" alt="Seja Membro" class="option-image">
+                <div class="option-content">
+                    <h3 class="option-title">Seja Membro</h3>
+                    <p class="option-description"><b>Quer se tornar membro da Lagoinha Dublin?</b> Entre no nosso grupo de WhatsApp e receba todas as informações sobre o próximo <b>Café de Novos Membros</b>.</p>
+                    <a href="https://chat.whatsapp.com/LGUP6ir7CvJ5Bf01kRMaVN" target="_blank" class="option-button">Entrar!</a>
+                </div>
             </div>
 
-            <!-- Card 3: Curso Start -->
-            <div class="card">
-                <h3>Curso Start</h3>
-                <p>Conheça os fundamentos da fé cristã e aprenda mais sobre Jesus e Seu propósito para sua vida.</p>
-                <a href="#contato" class="card-button">Fazer o Start</a>
+             <!-- GC's Card -->
+            <div class="option-card">
+                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=600&fit=crop" alt="Grupos de Crescimento" class="option-image">
+                <div class="option-content">
+                    <h3 class="option-title">GC's</h3>
+                    <p class="option-description">Grupos de Crescimento onde você cresce espiritualmente, faz amigos e vive em comunidade.</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSePhxsqMiLgqbbcxn5FBcG1_WQEOG2WlEm2L9nnTvj3nQ-jdw/viewform" target="_blank" class="option-button">Quero conhecer</a>
+                </div>
+            </div>
+            
+            <!-- Curso Start Card -->
+            <div class="option-card">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop" alt="Curso Start" class="option-image">
+                <div class="option-content">
+                    <h3 class="option-title">Curso Start</h3>
+                    <p class="option-description">Conheça os fundamentos da fé cristã, aprenda mais sobre Jesus e descubra o propósito de Deus para sua vida.</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfUAOrjD36_k6VIs-KPFQW3Pz-7rUa2hrCznbgtV20vPT4azA/viewform" target="_blank" class="option-button">Fazer o Start</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Info Section -->
-    <section class="info-section" id="contato">
-        <div class="info-container">
-            <h2>Estamos Aqui Para Você</h2>
-            <p>
-                Nossa missão é cuidar de você e te ajudar a crescer na sua caminhada com Jesus. Não importa onde você está nessa jornada, queremos caminhar ao seu lado.
-            </p>
-            <p>
-                Entre em contato conosco pelo WhatsApp e nossa equipe terá o prazer de te atender e te auxiliar em qualquer uma dessas áreas.
-            </p>
+    <!-- Volunteer Section -->
+    <section class="volunteer-section">
+        <h2>Faça Parte do Nosso Time de Voluntários!</h2>
+        <p>Coloque seus dons e talentos em prática servindo a Deus e às pessoas. Junte-se a nós!</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSePhxsqMiLgqbbcxn5FBcG1_WQEOG2WlEm2L9nnTvj3nQ-jdw/viewform" target="_blank" class="volunteer-button">Quero Fazer Parte!</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <h2>Entre em Contato</h2>
             
             <div class="contact-info">
                 <h3>📱 Fale Conosco</h3>
                 <p><strong>WhatsApp:</strong> +353 87 001 6933</p>
-                <p><strong>Local dos Cultos:</strong><br>
+                <br>
                 Griffith College<br>
                 South Circular Road<br>
                 Dublin, Ireland D08 V04N</p>
+                <br>
                 <p><strong>Sunday Services / Cultos aos Domingos:</strong><br>
                 10AM | 11:45AM | 5PM (English) | 6:30PM</p>
                 <a href="https://wa.me/353870016933" class="contact-button" target="_blank">Enviar Mensagem</a>
@@ -497,8 +481,8 @@
     <!-- Footer -->
     <footer>
         <p>📱 WhatsApp: +353 87 001 6933</p>
-        <p>📧 Email: contato@lagoinhadublin.ie</p>
-        <p style="margin-top: 20px;">&copy; 2026 Lagoinha Dublin. Todos os direitos reservados.</p>
+        <p>📍 Griffith College, South Circular Road, Dublin D08 V04N</p>
+        <p style="margin-top: 30px;">&copy; 2026 Lagoinha Dublin. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
