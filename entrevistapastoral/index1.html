@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrevista Pastoral - Lagoinha Dublin</title>
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            min-height: 70vh;
+            background: linear-gradient(135deg, #e67e40 0%, #d4652e 50%, #c24d1f 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 10px 20px;
+        }
+        
+        .hero-logo {
+            width: 100%;
+            max-width: 380px;
+            height: auto;
+            margin-bottom: 1px;
+            display: block;
+        }
+        
+        .hero-section h1 {
+            font-size: 5.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            line-height: 1.2;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 40px;
+            max-width: 800px;
+            line-height: 1.8;
+        }
+        
+        /* Info Section */
+        .info-section {
+            background: white;
+            padding: 80px 20px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #c24d1f;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .info-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .intro-text {
+            font-size: 1.25rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .objective-intro {
+            font-size: 1.2rem;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .objectives-list {
+            list-style: none;
+            counter-reset: objective-counter;
+            padding-left: 0;
+        }
+        
+        .objectives-list li {
+            counter-increment: objective-counter;
+            display: grid;
+            grid-template-columns: 70px 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+            align-items: start;
+        }
+        
+        .objectives-list li::before {
+            content: counter(objective-counter);
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #e67e40 0%, #d4652e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: white;
+            box-shadow: 0 10px 30px rgba(212, 101, 46, 0.3);
+        }
+        
+        .objectives-list li span {
+            font-size: 1.15rem;
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* Steps Section */
+        .steps-section {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0d6 100%);
+            padding: 80px 20px;
+        }
+        
+        .steps-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .step {
+            display: grid;
+            grid-template-columns: 70px 1fr;
+            gap: 25px;
+            margin-bottom: 40px;
+            align-items: start;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #e67e40 0%, #d4652e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: white;
+            box-shadow: 0 10px 30px rgba(212, 101, 46, 0.3);
+        }
+        
+        .step-content p {
+            font-size: 1.15rem;
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* Banner Message */
+        .banner-message {
+            background: linear-gradient(135deg, #e67e40 0%, #d4652e 100%);
+            color: white;
+            text-align: center;
+            padding: 35px 40px;
+            margin: 0 auto;
+            box-shadow: 0 10px 40px rgba(212, 101, 46, 0.3);
+            position: relative;
+        }
+        
+        .banner-message p {
+            font-size: 1.3rem;
+            font-weight: 700;
+            line-height: 1.8;
+            margin: 0;
+        }
+        
+        /* Schedule Section */
+        .schedule-section {
+            background: white;
+            padding: 80px 20px;
+        }
+        
+        .schedule-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .schedule-grid {
+            max-width: 1200px;
+            margin: 50px auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .schedule-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(212, 101, 46, 0.15);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .schedule-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(212, 101, 46, 0.3);
+        }
+        
+        .schedule-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        
+        .schedule-card:hover .schedule-image {
+            transform: scale(1.05);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-section h1 {
+                font-size: 4rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-logo {
+                max-width: 250px;
+            }
+            
+            .hero-section h1 {
+                font-size: 2.8rem;
+                letter-spacing: -1px;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+                margin-bottom: 30px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .intro-text {
+                font-size: 1.05rem;
+            }
+            
+            .objectives-list li {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                text-align: center;
+                margin-bottom: 25px;
+            }
+            
+            .objectives-list li::before {
+                margin: 0 auto;
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+            
+            .objectives-list li span {
+                font-size: 0.95rem;
+            }
+            
+            .step {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                text-align: center;
+                margin-bottom: 35px;
+            }
+            
+            .step-number {
+                margin: 0 auto;
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+            
+            .step-content p {
+                font-size: 0.95rem;
+            }
+            
+            .banner-message {
+                padding: 25px 30px;
+            }
+            
+            .banner-message p {
+                font-size: 1.1rem;
+            }
+            
+            .schedule-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-logo {
+                max-width: 200px;
+            }
+            
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.7rem;
+            }
+            
+            .banner-message p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <img src="images/LAGOINHADUBLIN_logo.png" alt="Lagoinha Dublin" class="hero-logo">
+        <h1>ENTREVISTA<br>PASTORAL</h1>
+        <p class="hero-subtitle">
+            Ficamos muito felizes em caminhar com você!
+        </p>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info-section">
+        <h2 class="section-title">O Que é a Entrevista Pastoral?</h2>
+        <div class="info-content">
+            <p class="intro-text">A Entrevista Pastoral é um momento especial que faz parte do nosso cuidado como igreja. Após o Café de Novos Membros, queremos ter um tempo de conversa leve e intencional para conhecer melhor você, sua história, seus dons e como podemos caminhar juntos de forma saudável.</p>
+            
+            <p class="objective-intro">Essa entrevista é uma conversa informal, sem pressão, com o objetivo de:</p>
+            
+            <ol class="objectives-list">
+                <li><span>Estreitar relacionamentos</span></li>
+                <li><span>Conectar você de forma mais profunda à igreja</span></li>
+                <li><span>Entender como podemos te ajudar a se envolver nos ministérios</span></li>
+                <li><span>Realizar sua inserção no hall de membros</span></li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="steps-section">
+        <h2 class="section-title">Como Funciona o Agendamento?</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <p>Você pode escolher a melhor data e horário de acordo com a sua disponibilidade.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <p>O sistema funciona em round robin, ou seja, automaticamente você será direcionado(a) a um de nossos entrevistadores disponíveis naquele horário.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <p>As entrevistas acontecem presencialmente em nossa igreja.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="banner-message">
+            <p>✨ Mais do que um processo, esse é um encontro para construir relacionamento, gerar pertencimento e caminhar juntos no propósito que Deus tem para sua vida. ✨</p>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section class="schedule-section" id="agendar">
+        <div class="schedule-container">
+            <h2 class="section-title">Agende Sua Entrevista</h2>
+            <p class="section-subtitle">
+                Estamos animados para esse tempo com você! Escolha a opção que melhor se encaixa:
+            </p>
+            
+            <div class="schedule-grid">
+                <a href="https://calendly.com/lagoinhadublin/mulheres" target="_blank" class="schedule-card">
+                    <img src="images/mulheres.png" alt="Entrevista Mulheres" class="schedule-image">
+                </a>
+                
+                <a href="https://calendly.com/lagoinhadublin/homens" target="_blank" class="schedule-card">
+                    <img src="images/homens.png" alt="Entrevista Homens" class="schedule-image">
+                </a>
+                
+                <a href="https://calendly.com/lagoinhadublin/casais" target="_blank" class="schedule-card">
+                    <img src="images/casais.png" alt="Entrevista Casais" class="schedule-image">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>📍 Griffith College, South Circular Road, Dublin D08 V04N</p>
+        <p style="margin-top: 20px;">&copy; 2026 Lagoinha Dublin. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
